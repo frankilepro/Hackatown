@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backend\ClarifaiCaller.cs" />
+    <Compile Include="Backend\Model\ClarifaiRequest.cs" />
     <Compile Include="BitmapHelpers.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MapsActivity.cs" />
