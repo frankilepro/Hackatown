@@ -54,7 +54,7 @@ namespace Hackatown.Backend
             var response = await client.PostAsync(@"https://api.clarifai.com/v2/models/Hackatown%202018/outputs", content);
 
             var olishit = JsonConvert.DeserializeObject<ClarifaiResponse>(await response.Content.ReadAsStringAsync());
-            return olishit.Outputs.First().Data.Concepts.OrderByDescending(x => x.Value).First().Name;
+            return string.Join("\n", olishit.Outputs.First().Data.Concepts.OrderByDescending(x => x.Value).Select(x => $"{x.Name}:{x.Value}"));
         }
     }
 }
