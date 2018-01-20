@@ -23,7 +23,7 @@ namespace Hackatown
             SetContentView(Resource.Layout.Result);
             img = FindViewById<ImageView>(Resource.Id.ResultImgView);
 
-            Building etablissement = new Building(Intent.GetStringExtra("name"));
+            //Building etablissement = new Building(Intent.GetStringExtra("name"));
 
             //setResultObject(etablissement);
         }

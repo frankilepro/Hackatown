@@ -19,6 +19,7 @@ using Uri = Android.Net.Uri;
 using Java.IO;
 using Camera;
 using System.Threading.Tasks;
+using Hackatown.Backend;
 
 namespace Hackatown
 {

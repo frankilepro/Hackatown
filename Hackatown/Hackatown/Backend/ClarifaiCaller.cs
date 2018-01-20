@@ -24,7 +24,7 @@ namespace Hackatown.Backend
         {
             HttpClient client = new HttpClient();
 
-            client.DefaultRequestHeaders.Add("Authorization", "f1cfabe6a9cc49d6827987dc7b48d333");
+            client.DefaultRequestHeaders.Add("Authorization", "Key f1cfabe6a9cc49d6827987dc7b48d333");
             client.DefaultRequestHeaders.Add("Accept", "application/json");
 
             byte[] bitmapData;
@@ -34,23 +34,41 @@ namespace Hackatown.Backend
                 bitmapData = stream.ToArray();
             }
 
-            var response = await client.PostAsync(@"https://api.clarifai.com/v2/models/Hackatown%202018/outputs",
-                                                  new StringContent(JsonConvert.SerializeObject(new ClarifaiRequest
-                                                  {
-                                                      inputs = new List<Input>
-                                                       {
-                                                           new Input
-                                                           {
-                                                               data = new Data
-                                                               {
-                                                                   image = new Image
-                                                                   {
-                                                                       base64 = Convert.ToBase64String(bitmapData)
-                                                                   }
-                                                               }
-                                                           }
-                                                       },
-                                                  })));
+            var content = new StringContent(JsonConvert.SerializeObject(new ClarifaiRequest
+            {
+                inputs = new List<Input>
+                {
+                    new Input
+                    {
+                        data = new Data
+                        {
+                            image = new Image
+                            {
+                                base64 = Convert.ToBase64String(bitmapData)
+                            }
+                        }
+                    }
+                },
+            }));
+            var response = await client.PostAsync(@"https://api.clarifai.com/v2/models/Hackatown%202018/outputs", content);
+
+            //var response = await client.PostAsync(@"https://api.clarifai.com/v2/models/Hackatown%202018/outputs",
+            //                                      new StringContent(JsonConvert.SerializeObject(new ClarifaiRequest
+            //                                      {
+            //                                          inputs = new List<Input>
+            //                                           {
+            //                                               new Input
+            //                                               {
+            //                                                   data = new Data
+            //                                                   {
+            //                                                       image = new Image
+            //                                                       {
+            //                                                           base64 = "allo",//Convert.ToBase64String(bitmapData)
+            //                                                       }
+            //                                                   }
+            //                                               }
+            //                                           },
+            //                                      })));
 
             return await response.Content.ReadAsStringAsync();
         }
