@@ -7,22 +7,39 @@ namespace Hackatown
     [Activity(Label = "Hackatown", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        TextView test;
+        Button recognition;
+        Button maps;
+        Button rallye;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            
 
-            test = FindViewById<TextView>(Resource.Id.test);
-            test.Click += testClick;
+            recognition = FindViewById<Button>(Resource.Id.recognition);
+            maps = FindViewById<Button>(Resource.Id.maps);
+            rallye = FindViewById<Button>(Resource.Id.rallye);
+
+            recognition.Click += Recognition_Click;
+            maps.Click += Maps_Click;
+            rallye.Click += Rallye_Click;
         }
 
-        private void testClick(object sender, System.EventArgs e)
+        private void Rallye_Click(object sender, System.EventArgs e)
         {
-            test.Text = "allooasdoasoda";
-            StartActivity(typeof(AlexActivity));
+            StartActivity(typeof(RallyeActivity));
+        }
+
+        private void Maps_Click(object sender, System.EventArgs e)
+        {
+            StartActivity(typeof(MapsActivity));
+        }
+
+        private void Recognition_Click(object sender, System.EventArgs e)
+        {
+            StartActivity(typeof(RecognitionActivity));
         }
     }
 }

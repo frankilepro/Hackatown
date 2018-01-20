@@ -5,9 +5,19 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <TextView
-        android:text="Allo de lexi"
+    <Button
+        android:text="Recognition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/test" />
+        android:id="@+id/recognition" />
+    <Button
+        android:text="Maps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/maps" />
+    <Button
+        android:text="Rallye"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rallye" />
 </LinearLayout>
