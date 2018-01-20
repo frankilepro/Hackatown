@@ -101,18 +101,18 @@ namespace Hackatown
                 int width = Resources.DisplayMetrics.WidthPixels;
                 using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
                 {
-                    var closest = await ClarifaiCaller.CallApi(bitmap);
-                    Toast.MakeText(this, closest, ToastLength.Long).Show();
-                    //View ImageView  
-                    ImgView.RecycleBitmap();
-                    ImgView.SetImageBitmap(bitmap);
-                    //Upload Image in Database
                     progress = new Android.App.ProgressDialog(this);
                     progress.Indeterminate = true;
                     progress.SetProgressStyle(Android.App.ProgressDialogStyle.Spinner);
                     progress.SetMessage("Loading...");
                     progress.SetCancelable(false);
                     progress.Show();
+                    var closest = await ClarifaiCaller.CallApi(bitmap);
+                    Toast.MakeText(this, closest, ToastLength.Long).Show();
+                    //View ImageView  
+                    ImgView.RecycleBitmap();
+                    ImgView.SetImageBitmap(bitmap);
+                    //Upload Image in Database
 
                     await Task.Delay(TimeSpan.FromSeconds(2));
 
