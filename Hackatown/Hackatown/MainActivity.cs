@@ -22,6 +22,7 @@ namespace Hackatown
         private void testClick(object sender, System.EventArgs e)
         {
             test.Text = "allooasdoasoda";
+            StartActivity(typeof(AlexActivity));
         }
     }
 }
