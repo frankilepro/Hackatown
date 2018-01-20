@@ -18,6 +18,7 @@ using Uri = Android.Net.Uri;
 
 using Java.IO;
 using Camera;
+using System.Threading.Tasks;
 
 namespace Hackatown
 {
@@ -26,8 +27,9 @@ namespace Hackatown
     {
         Button BtnTakeImg;
         ImageView ImgView;
-        TextView Localisation;
-        //LocationManager locMgr;
+
+        Android.App.ProgressDialog progress;
+
         public static File _file;
         public static File _dir;
         protected override void OnCreate(Bundle bundle)
@@ -38,10 +40,8 @@ namespace Hackatown
             if (IsThereAnAppToTakePictures())
             {
                 CreateDirectoryForPictures();
-                //locMgr = (LocationManager)GetSystemService(LocationService);
                 BtnTakeImg = FindViewById<Button>(Resource.Id.btntakepicture);
                 ImgView = FindViewById<ImageView>(Resource.Id.ImgTakeimg);
-                Localisation = FindViewById<TextView>(Resource.Id.imgText);
                 BtnTakeImg.Click += TakeAPicture;
             }
         }
@@ -66,13 +66,14 @@ namespace Hackatown
             intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(_file));
             StartActivityForResult(intent, 102);
         }
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        protected async override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             if (requestCode == 102 && resultCode == Result.Ok)
             {
                 // make it available in the gallery  
                 Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
                 Uri contentUri = Uri.FromFile(_file);
+                
                 mediaScanIntent.SetData(contentUri);
                 SendBroadcast(mediaScanIntent);
                 //Converstion Image Size  
@@ -83,9 +84,19 @@ namespace Hackatown
                     //View ImageView  
                     ImgView.RecycleBitmap();
                     ImgView.SetImageBitmap(bitmap);
-
-                    //locMgr.RequestSingleUpdate(locMgr.GetProviders(true).First(),);
                     //Upload Image in Database
+                    progress = new Android.App.ProgressDialog(this);
+                    progress.Indeterminate = true;
+                    progress.SetProgressStyle(Android.App.ProgressDialogStyle.Spinner);
+                    progress.SetMessage("Loading...");
+                    progress.SetCancelable(false);
+                    progress.Show();
+
+                    await Task.Delay(TimeSpan.FromSeconds(2));
+
+                    Intent res = new Intent(this, typeof(ResultActivity));
+                    res.PutExtra("name", "poly");
+                    StartActivity(res);
                 }
             }
         }
