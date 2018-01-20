@@ -16,24 +16,46 @@ namespace Hackatown
     public class ResultActivity : Activity
     {
         ImageView img;
+        TextView text;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Result);
             img = FindViewById<ImageView>(Resource.Id.ResultImgView);
+            text = FindViewById<TextView>(Resource.Id.ResultTextView);
 
             Building etablissement = new Building(Intent.GetStringExtra("name"));
+            SetResultObject(etablissement);
+        }
 
-            //setResultObject(etablissement);
+        public void SetResultObject(Building e)
+        {
+            text.Text = e._name;
+            img.SetImageResource(e._img);
         }
     }
 
-    class Building
+    public class Building
     {
-        Building(string name)
-        {
+        public int _img;
+        public string _name;
 
+        public Building(string name)
+        {
+            switch(name)
+            {
+                case "poly":
+                    _img = Resource.Drawable.Poly;
+                    _name = "Polytechnique Montreal";
+                    break;
+                case "udem":
+                    break;
+                case "oratoire":
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

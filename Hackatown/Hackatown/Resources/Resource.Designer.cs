@@ -60,11 +60,17 @@ namespace Hackatown
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050004
-			public const int ImgTakeimg = 2131034116;
-			
 			// aapt resource value: 0x7f050005
-			public const int ResultImgView = 2131034117;
+			public const int ImgTakeimg = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int ResultImgView = 2131034118;
+			
+			// aapt resource value: 0x7f050007
+			public const int ResultTextView = 2131034119;
+			
+			// aapt resource value: 0x7f050004
+			public const int btnselectpicture = 2131034116;
 			
 			// aapt resource value: 0x7f050003
 			public const int btntakepicture = 2131034115;

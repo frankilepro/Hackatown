@@ -2,12 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"          
+    android:background="@android:color/background_light">
     <Button
         android:id="@+id/btntakepicture"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Take Picture" />
+    <Button
+        android:id="@+id/btnselectpicture"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Picture from storage" />
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="fill_parent"

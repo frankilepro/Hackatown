@@ -26,6 +26,7 @@ namespace Hackatown
     public class RecognitionActivity : Activity
     {
         Button BtnTakeImg;
+        Button BtnSelectImg;
         ImageView ImgView;
 
         Android.App.ProgressDialog progress;
@@ -41,10 +42,29 @@ namespace Hackatown
             {
                 CreateDirectoryForPictures();
                 BtnTakeImg = FindViewById<Button>(Resource.Id.btntakepicture);
+                BtnSelectImg = FindViewById<Button>(Resource.Id.btnselectpicture);
                 ImgView = FindViewById<ImageView>(Resource.Id.ImgTakeimg);
                 BtnTakeImg.Click += TakeAPicture;
+                BtnSelectImg.Click += BtnSelectImg_Click;
             }
         }
+
+        private void BtnSelectImg_Click(object sender, EventArgs e)
+        {
+            Intent = new Intent();
+            Intent.SetType("image/*");
+            Intent.SetAction(Intent.ActionGetContent);
+            StartActivityForResult(Intent.CreateChooser(Intent, "Select Picture"), 102);
+
+        }
+        private void TakeAPicture(object sender, EventArgs eventArgs)
+        {
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            _file = new File(_dir, string.Format("Image_{0}.jpg", Guid.NewGuid()));
+            intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(_file));
+            StartActivityForResult(intent, 102);
+        }
+
         private void CreateDirectoryForPictures()
         {
             _dir = new File(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures), "Hackatown");
@@ -59,18 +79,16 @@ namespace Hackatown
             IList<ResolveInfo> availableActivities = PackageManager.QueryIntentActivities(intent, PackageInfoFlags.MatchDefaultOnly);
             return availableActivities != null && availableActivities.Count > 0;
         }
-        private void TakeAPicture(object sender, EventArgs eventArgs)
-        {
-            Intent intent = new Intent(MediaStore.ActionImageCapture);
-            _file = new File(_dir, string.Format("Image_{0}.jpg", Guid.NewGuid()));
-            intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(_file));
-            StartActivityForResult(intent, 102);
-        }
         
         protected async override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
+            
             if (requestCode == 102 && resultCode == Result.Ok)
             {
+                if(_file == null)
+                {
+                    _file = new File(GetPathToImage(data.Data));
+                }
                 // make it available in the gallery  
                 Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
                 Uri contentUri = Uri.FromFile(_file);
@@ -82,7 +100,7 @@ namespace Hackatown
                 int width = Resources.DisplayMetrics.WidthPixels;
                 using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
                 {
-                    var test = await ClarifaiCaller.CallApi(bitmap);
+                    //var test = await ClarifaiCaller.CallApi(bitmap);
                     //View ImageView  
                     ImgView.RecycleBitmap();
                     ImgView.SetImageBitmap(bitmap);
@@ -101,6 +119,29 @@ namespace Hackatown
                     StartActivity(res);
                 }
             }
+        }
+        private string GetPathToImage(Android.Net.Uri uri)
+        {
+            string doc_id = "";
+            using (var c1 = ContentResolver.Query(uri, null, null, null, null))
+            {
+                c1.MoveToFirst();
+                String document_id = c1.GetString(0);
+                doc_id = document_id.Substring(document_id.LastIndexOf(":") + 1);
+            }
+
+            string path = null;
+
+            // The projection contains the columns we want to return in our query.
+            string selection = Android.Provider.MediaStore.Images.Media.InterfaceConsts.Id + " =? ";
+            using (var cursor = ManagedQuery(Android.Provider.MediaStore.Images.Media.ExternalContentUri, null, selection, new string[] { doc_id }, null))
+            {
+                if (cursor == null) return path;
+                var columnIndex = cursor.GetColumnIndexOrThrow(Android.Provider.MediaStore.Images.Media.InterfaceConsts.Data);
+                cursor.MoveToFirst();
+                path = cursor.GetString(columnIndex);
+            }
+            return path;
         }
     }
 }
