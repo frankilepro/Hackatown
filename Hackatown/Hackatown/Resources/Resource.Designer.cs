@@ -45,7 +45,7 @@ namespace Hackatown
 		{
 			
 			// aapt resource value: 0x7f040000
-			public const int textView1 = 2130968576;
+			public const int test = 2130968576;
 			
 			static Id()
 			{
