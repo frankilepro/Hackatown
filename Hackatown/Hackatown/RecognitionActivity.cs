@@ -19,6 +19,7 @@ using Uri = Android.Net.Uri;
 using Java.IO;
 using Camera;
 using System.Threading.Tasks;
+using Hackatown.Backend;
 
 namespace Hackatown
 {
@@ -100,7 +101,8 @@ namespace Hackatown
                 int width = Resources.DisplayMetrics.WidthPixels;
                 using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
                 {
-                    //var test = await ClarifaiCaller.CallApi(bitmap);
+                    var closest = await ClarifaiCaller.CallApi(bitmap);
+                    Toast.MakeText(this, closest, ToastLength.Long).Show();
                     //View ImageView  
                     ImgView.RecycleBitmap();
                     ImgView.SetImageBitmap(bitmap);
