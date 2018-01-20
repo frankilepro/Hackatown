@@ -14,8 +14,9 @@
         android:layout_height="347.0dp"
         android:id="@+id/ImgTakeimg"
         android:adjustViewBounds="true" />
-    <TextView
+  <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imgText" />
+        android:id="@+id/imgText"
+        />
 </LinearLayout>

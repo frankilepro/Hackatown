@@ -18,7 +18,6 @@ using Uri = Android.Net.Uri;
 
 using Java.IO;
 using Camera;
-using Hackatown.Backend;
 
 namespace Hackatown
 {
@@ -67,8 +66,7 @@ namespace Hackatown
             intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(_file));
             StartActivityForResult(intent, 102);
         }
-
-        protected async override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             if (requestCode == 102 && resultCode == Result.Ok)
             {
@@ -82,7 +80,6 @@ namespace Hackatown
                 int width = Resources.DisplayMetrics.WidthPixels;
                 using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
                 {
-                    var test = await ClarifaiCaller.CallApi(bitmap);
                     //View ImageView  
                     ImgView.RecycleBitmap();
                     ImgView.SetImageBitmap(bitmap);
