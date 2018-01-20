@@ -30,7 +30,7 @@ namespace Hackatown.Backend.Response
         public Status Status { get; set; }
         public string CreatedAt { get; set; }
         public Model Model { get; set; }
-        public Input Input { get; set; }
+        public Input2 Input { get; set; }
         public Data1 Data { get; set; }
     }
 
@@ -62,7 +62,7 @@ namespace Hackatown.Backend.Response
         public Status Status { get; set; }
         public int TotalInputCount { get; set; }
     }
-    class Input
+    class Input2
     {
         public string Id { get; set; }
         public Data2 Data { get; set; }
@@ -73,9 +73,9 @@ namespace Hackatown.Backend.Response
     }
     class Data2
     {
-        public Image Image { get; set; }
+        public Image2 Image { get; set; }
     }
-    class Image
+    class Image2
     {
         public string Url { get; set; }
         public bool Base64 { get; set; }

@@ -14,6 +14,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Hackatown.Backend.Model;
+using Hackatown.Backend.Response;
 using Newtonsoft.Json;
 
 namespace Hackatown.Backend
@@ -52,25 +53,8 @@ namespace Hackatown.Backend
             }));
             var response = await client.PostAsync(@"https://api.clarifai.com/v2/models/Hackatown%202018/outputs", content);
 
-            //var response = await client.PostAsync(@"https://api.clarifai.com/v2/models/Hackatown%202018/outputs",
-            //                                      new StringContent(JsonConvert.SerializeObject(new ClarifaiRequest
-            //                                      {
-            //                                          inputs = new List<Input>
-            //                                           {
-            //                                               new Input
-            //                                               {
-            //                                                   data = new Data
-            //                                                   {
-            //                                                       image = new Image
-            //                                                       {
-            //                                                           base64 = "allo",//Convert.ToBase64String(bitmapData)
-            //                                                       }
-            //                                                   }
-            //                                               }
-            //                                           },
-            //                                      })));
-
-            return await response.Content.ReadAsStringAsync();
+            var olishit = JsonConvert.DeserializeObject<ClarifaiResponse>(await response.Content.ReadAsStringAsync());
+            return olishit.Outputs.First().Data.Concepts.OrderByDescending(x => x.Value).First().Name;
         }
     }
 }
