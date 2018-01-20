@@ -10,6 +10,7 @@ namespace Hackatown
         Button recognition;
         Button maps;
         Button rallye;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -21,7 +22,6 @@ namespace Hackatown
             recognition = FindViewById<Button>(Resource.Id.recognition);
             maps = FindViewById<Button>(Resource.Id.maps);
             rallye = FindViewById<Button>(Resource.Id.rallye);
-
             recognition.Click += Recognition_Click;
             maps.Click += Maps_Click;
             rallye.Click += Rallye_Click;

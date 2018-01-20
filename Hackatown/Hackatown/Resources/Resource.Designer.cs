@@ -44,6 +44,15 @@ namespace Hackatown
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f040004
+			public const int ImgTakeimg = 2130968580;
+			
+			// aapt resource value: 0x7f040003
+			public const int btntakepicture = 2130968579;
+			
+			// aapt resource value: 0x7f040005
+			public const int imgText = 2130968581;
+			
 			// aapt resource value: 0x7f040001
 			public const int maps = 2130968577;
 			
