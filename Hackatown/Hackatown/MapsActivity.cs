@@ -38,7 +38,7 @@ namespace Hackatown
             _pDialog = new ProgressDialog(this);
             _pDialog.Indeterminate = true;
             _pDialog.SetProgressStyle(ProgressDialogStyle.Spinner);
-            _pDialog.SetMessage("Loading...");
+            _pDialog.SetMessage("Chargement...");
             _pDialog.SetCancelable(true);
             _pDialog.Show();
             

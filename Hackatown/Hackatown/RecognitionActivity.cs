@@ -126,7 +126,7 @@ namespace Hackatown
                     progress = new ProgressDialog(this);
                     progress.Indeterminate = true;
                     progress.SetProgressStyle(Android.App.ProgressDialogStyle.Spinner);
-                    progress.SetMessage("Loading...");
+                    progress.SetMessage("Chargement...");
                     progress.SetCancelable(false);
                     progress.Show();
 
