@@ -174,8 +174,8 @@ namespace Hackatown
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f06000f
-			public const int common_google_signin_btn_text_dark = 2131099663;
+			// aapt resource value: 0x7f060013
+			public const int common_google_signin_btn_text_dark = 2131099667;
 			
 			// aapt resource value: 0x7f060000
 			public const int common_google_signin_btn_text_dark_default = 2131099648;
@@ -189,8 +189,8 @@ namespace Hackatown
 			// aapt resource value: 0x7f060003
 			public const int common_google_signin_btn_text_dark_pressed = 2131099651;
 			
-			// aapt resource value: 0x7f060010
-			public const int common_google_signin_btn_text_light = 2131099664;
+			// aapt resource value: 0x7f060014
+			public const int common_google_signin_btn_text_light = 2131099668;
 			
 			// aapt resource value: 0x7f060004
 			public const int common_google_signin_btn_text_light_default = 2131099652;
@@ -204,8 +204,20 @@ namespace Hackatown
 			// aapt resource value: 0x7f060007
 			public const int common_google_signin_btn_text_light_pressed = 2131099655;
 			
+			// aapt resource value: 0x7f060015
+			public const int common_google_signin_btn_tint = 2131099669;
+			
+			// aapt resource value: 0x7f06000f
+			public const int my_blue = 2131099663;
+			
+			// aapt resource value: 0x7f060012
+			public const int my_gray = 2131099666;
+			
+			// aapt resource value: 0x7f060010
+			public const int my_green = 2131099664;
+			
 			// aapt resource value: 0x7f060011
-			public const int common_google_signin_btn_tint = 2131099665;
+			public const int my_purple = 2131099665;
 			
 			// aapt resource value: 0x7f06000b
 			public const int notification_action_color_filter = 2131099659;
@@ -410,11 +422,11 @@ namespace Hackatown
 			// aapt resource value: 0x7f02001f
 			public const int notification_icon_background = 2130837535;
 			
-			// aapt resource value: 0x7f020025
-			public const int notification_template_icon_bg = 2130837541;
-			
 			// aapt resource value: 0x7f020026
-			public const int notification_template_icon_low_bg = 2130837542;
+			public const int notification_template_icon_bg = 2130837542;
+			
+			// aapt resource value: 0x7f020027
+			public const int notification_template_icon_low_bg = 2130837543;
 			
 			// aapt resource value: 0x7f020020
 			public const int notification_tile_bg = 2130837536;
@@ -429,7 +441,10 @@ namespace Hackatown
 			public const int Poly = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int Udem = 2130837540;
+			public const int tshirt_and_tote_front = 2130837540;
+			
+			// aapt resource value: 0x7f020025
+			public const int Udem = 2130837541;
 			
 			static Drawable()
 			{
@@ -449,12 +464,6 @@ namespace Hackatown
 			
 			// aapt resource value: 0x7f0a0031
 			public const int ResultImgView = 2131361841;
-			
-			// aapt resource value: 0x7f0a0032
-			public const int ResultTextView = 2131361842;
-			
-			// aapt resource value: 0x7f0a0033
-			public const int ResultValueView = 2131361843;
 			
 			// aapt resource value: 0x7f0a001d
 			public const int action0 = 2131361821;
@@ -590,6 +599,12 @@ namespace Hackatown
 			
 			// aapt resource value: 0x7f0a0003
 			public const int text2 = 2131361795;
+			
+			// aapt resource value: 0x7f0a0033
+			public const int textViewDesc = 2131361843;
+			
+			// aapt resource value: 0x7f0a0032
+			public const int textViewName = 2131361842;
 			
 			// aapt resource value: 0x7f0a0025
 			public const int time = 2131361829;
@@ -777,6 +792,9 @@ namespace Hackatown
 		
 		public partial class Style
 		{
+			
+			// aapt resource value: 0x7f07000c
+			public const int MyCustomTheme = 2131165196;
 			
 			// aapt resource value: 0x7f070005
 			public const int TextAppearance_Compat_Notification = 2131165189;
