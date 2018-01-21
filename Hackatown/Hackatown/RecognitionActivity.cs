@@ -107,8 +107,9 @@ namespace Hackatown
                     progress.SetMessage("Loading...");
                     progress.SetCancelable(false);
                     progress.Show();
+
                     var closest = await ClarifaiCaller.CallApi(bitmap);
-                    Toast.MakeText(this, closest, ToastLength.Long).Show();
+                    Toast.MakeText(this, string.Join("\n", closest), ToastLength.Long).Show();
                     //View ImageView  
                     ImgView.RecycleBitmap();
                     ImgView.SetImageBitmap(bitmap);
@@ -117,7 +118,7 @@ namespace Hackatown
                     await Task.Delay(TimeSpan.FromSeconds(2));
 
                     Intent res = new Intent(this, typeof(ResultActivity));
-                    res.PutExtra("name", "poly");
+                    res.PutExtra("name", closest.First().Split(':')[0]);
                     StartActivity(res);
                 }
             }
