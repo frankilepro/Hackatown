@@ -14,6 +14,7 @@ namespace Hackatown.Backend.Model
 {
     public class Building
     {
+        public string Name { get; set; }
         public int Img { get; set; }
         public string Description { get; set; }
         public double Long { get; set; }
