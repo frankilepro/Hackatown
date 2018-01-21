@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
   <style name="MyCustomTheme" parent="android:Theme.Material.Light">
-    <item name="android:colorPrimary">@color/my_light_blue</item>
+    <item name="android:colorPrimary">@color/my_dark_red</item>
     <item name="android:colorPrimaryDark">@color/my_dark_gray</item>
-    <item name="android:colorAccent">@color/my_light_blue</item>
+    <item name="android:colorAccent">@color/my_dark_red</item>
     <item name="android:windowBackground">@color/my_white</item>
     <item name="android:textColorPrimary">@color/my_white</item>
     <item name="android:statusBarColor">@color/my_dark_gray</item>
-    <item name="android:navigationBarColor">@color/my_light_blue</item>
-    <item name="android:colorButtonNormal">@color/my_light_blue</item>
+    <item name="android:navigationBarColor">@color/my_dark_red</item>
+    <item name="android:colorButtonNormal">@color/my_dark_red</item>
     <!--<item name="android:buttonStyle">@style/MyButtonStyle</item>-->
   </style>
   <!--<style name="MyButtonStyle" parent="android:Button">
