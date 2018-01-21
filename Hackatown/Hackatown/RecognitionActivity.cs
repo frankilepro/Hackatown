@@ -30,7 +30,7 @@ namespace Hackatown
         Button BtnSelectImg;
         ImageView ImgView;
 
-        Android.App.ProgressDialog progress;
+        ProgressDialog progress;
 
         public static File _file;
         public static File _dir;
@@ -101,7 +101,7 @@ namespace Hackatown
                 int width = Resources.DisplayMetrics.WidthPixels;
                 using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
                 {
-                    progress = new Android.App.ProgressDialog(this);
+                    progress = new ProgressDialog(this);
                     progress.Indeterminate = true;
                     progress.SetProgressStyle(Android.App.ProgressDialogStyle.Spinner);
                     progress.SetMessage("Loading...");
@@ -114,8 +114,6 @@ namespace Hackatown
                     ImgView.RecycleBitmap();
                     ImgView.SetImageBitmap(bitmap);
                     //Upload Image in Database
-
-                    await Task.Delay(TimeSpan.FromSeconds(2));
 
                     Intent res = new Intent(this, typeof(ResultActivity));
                     res.PutExtra("name", closest.Count != 0 ? closest.First().Split(':')[0] : "");
