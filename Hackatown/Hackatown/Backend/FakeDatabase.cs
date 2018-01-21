@@ -12,6 +12,13 @@ namespace Hackatown.Backend
             Buildings = new Dictionary<string, Building>
             {
                 {
+                    "", new Building
+                    {
+                        Img = Resource.Drawable.Index,
+                        Description = "Malheureusement ca fonctionne pas!"
+                    }
+                },
+                {
                     "Polytechnique", new Building
                     {
                         Img = Resource.Drawable.Poly,
@@ -41,7 +48,7 @@ namespace Hackatown.Backend
                 {
                     "McGill", new Building
                     {
-                        Img = Resource.Drawable.Oratoire,
+                        Img = Resource.Drawable.mcgill,
                         Description = "L'université McGill (en anglais : McGill University), située à Montréal, est l'une des plus anciennes universités du Canada. L'université possède deux campus, séparés par 35 kilomètres. Le campus principal est au centre-ville de Montréal et le campus MacDonald est à Sainte-Anne-de-Bellevue, dans la banlieue. McGill compte parmi ses anciens élèves 12 prix Nobel et 142 boursiers de Rhodes, ainsi que trois astronautes, trois premiers ministres canadiens, treize juges de la Cour suprême du Canada, quatre dirigeants étrangers, 28 ambassadeurs étrangers, neuf Oscars, onze gagnants des Grammy Awards, trois gagnants du prix Pulitzer et 28 médaillés olympiques. Tout au long de sa longue histoire, les anciens élèves de McGill ont contribué à invention du football, du basket-ball et du hockey sur glace. L'université McGill ou ses anciens élèves ont également fondé plusieurs grandes universités et collèges, y compris les universités de la Colombie-Britannique, de Victoria et de l'Alberta, de l'École de médecine et de la médecine dentaire de Schulich, de l'École de médecine de l'Université Johns Hopkins et du Collège Dawson",
                         Lat = 45.5047847,
                         Long = -73.5793398
@@ -50,7 +57,7 @@ namespace Hackatown.Backend
                 {
                     "Concordia", new Building
                     {
-                        Img = Resource.Drawable.Poly,
+                        Img = Resource.Drawable.Concordia,
                         Description = "L’Université Concordia (dérivé de la devise de Montréal, Concordia salus, ou en français « la prospérité par la concorde ») est une université publique québécoise situé à Montréal. Celui-ci est scindée en deux campus majeurs distant de sept kilomètres : le campus Sir-George-Williams dans le centre-ville de Montréal (station de métro Guy-Concordia), et le campus Loyola dans le quartier résidentiel de Notre-Dame-de-Grâce (station de métro Vendôme). Même si cette institution est officiellement bilingue2, Concordia représente, avec McGill, une des deux universités d'enseignement anglais de Montréal. L'université comptait, en 2007, 39 230 étudiants.",
                         Lat = 45.4972657,
                         Long = -73.5812114
