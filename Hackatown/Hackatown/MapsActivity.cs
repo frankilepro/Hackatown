@@ -70,8 +70,7 @@ namespace Hackatown
             var locationCriteria = new Criteria();
             locationCriteria.Accuracy = Accuracy.NoRequirement;
             locationCriteria.PowerRequirement = Power.NoRequirement;
-            string locationProvider = _locationManager.GetBestProvider(locationCriteria, true);
-            _locationManager.RequestLocationUpdates(locationProvider, 2000, 1, this);
+            _locationManager.RequestLocationUpdates("network", 2000, 1, this);
         }
 
         protected override void OnPause()
@@ -91,31 +90,32 @@ namespace Hackatown
 
             _map.MoveCamera(cameraUpdate);
 
-            MarkerOptions curMarkerOps = new MarkerOptions();
-            curMarkerOps.SetPosition(here);
-            curMarkerOps.SetTitle("You are here");
-            _map.AddMarker(curMarkerOps);
-
             List<Building> bldgs = Backend.GoogleCaller.BuildingProches(here.Longitude, here.Latitude);
 
 
             MarkerOptions marker1 = new MarkerOptions();
             LatLng marker1Coords = new LatLng(bldgs[0].Lat, bldgs[0].Long);
             marker1.SetPosition(marker1Coords);
-            //marker1.SetTitle(bldgs[0].Name);
+            marker1.SetTitle(bldgs[0].Name);
             _map.AddMarker(marker1);
             
             MarkerOptions marker2 = new MarkerOptions();
             LatLng marker2Coords = new LatLng(bldgs[1].Lat, bldgs[1].Long);
             marker2.SetPosition(marker2Coords);
-            //marker2.SetTitle(bldgs[1].Name);
+            marker2.SetTitle(bldgs[1].Name);
             _map.AddMarker(marker2);
 
             MarkerOptions marker3 = new MarkerOptions();
             LatLng marker3Coords = new LatLng(bldgs[2].Lat, bldgs[2].Long);
             marker3.SetPosition(marker3Coords);
-            //marker3.SetTitle(bldgs[2].Name);
+            marker3.SetTitle(bldgs[2].Name);
             _map.AddMarker(marker3);
+
+            MarkerOptions curMarkerOps = new MarkerOptions();
+            curMarkerOps.SetPosition(here);
+            curMarkerOps.SetTitle("You are here");
+            curMarkerOps.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueAzure));
+            _map.AddMarker(curMarkerOps);
 
             _pDialog.Hide();
         }
