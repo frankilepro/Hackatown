@@ -45,13 +45,13 @@ namespace Hackatown
         {
             switch(name)
             {
-                case "poly":
+                case "Polytechnique":
                     _img = Resource.Drawable.Poly;
                     _name = "Polytechnique Montreal";
                     break;
-                case "udem":
+                case "Universite de Montreal":
                     break;
-                case "oratoire":
+                case "Oratoire St-Joseph":
                     break;
                 default:
                     break;
