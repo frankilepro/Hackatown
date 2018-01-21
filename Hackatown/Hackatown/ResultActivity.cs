@@ -50,8 +50,12 @@ namespace Hackatown
                     _name = "Polytechnique Montreal";
                     break;
                 case "Universite de Montreal":
+                    _img = Resource.Drawable.Udem;
+                    _name = "Universite de Montreal";
                     break;
                 case "Oratoire St-Joseph":
+                    _name = "Oratoire St-Joseph";
+                    _img = Resource.Drawable.Oratoire;
                     break;
                 default:
                     break;

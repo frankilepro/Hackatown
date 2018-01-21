@@ -99,7 +99,7 @@ namespace Hackatown
                 //Converstion Image Size  
                 int height = ImgView.Height;
                 int width = Resources.DisplayMetrics.WidthPixels;
-                using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(height, width))
+                using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
                 {
                     progress = new Android.App.ProgressDialog(this);
                     progress.Indeterminate = true;
