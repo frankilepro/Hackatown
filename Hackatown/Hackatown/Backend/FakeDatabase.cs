@@ -12,6 +12,13 @@ namespace Hackatown.Backend
             Buildings = new Dictionary<string, Building>
             {
                 {
+                    "", new Building
+                    {
+                        Img = Resource.Drawable.Index,
+                        Description = "Malheureusement ca fonctionne pas!"
+                    }
+                },
+                {
                     "Polytechnique", new Building
                     {
                         Img = Resource.Drawable.Poly,
