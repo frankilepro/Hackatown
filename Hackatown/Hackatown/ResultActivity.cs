@@ -19,6 +19,7 @@ namespace Hackatown
     {
         ImageView img;
         TextView text;
+        TextView valueView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -26,13 +27,16 @@ namespace Hackatown
             SetContentView(Resource.Layout.Result);
             img = FindViewById<ImageView>(Resource.Id.ResultImgView);
             text = FindViewById<TextView>(Resource.Id.ResultTextView);
+            valueView = FindViewById<TextView>(Resource.Id.ResultValueView);
 
-            SetResultObject(Intent.GetStringExtra("name"));
+
+            SetResultObject(Intent.GetStringExtra("name"), Intent.GetStringExtra("value"));
         }
 
-        public void SetResultObject(string name)
+        public void SetResultObject(string name, string value)
         {
             text.Text = name;
+            valueView.Text = $"Précision de {value}\n{FakeDatabase.Buildings[name].Description}";
             img.SetImageResource(FakeDatabase.Buildings[name].Img);
         }
     }

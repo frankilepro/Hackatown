@@ -378,49 +378,55 @@ namespace Hackatown
 			public const int googleg_standard_color_18 = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int notification_action_background = 2130837525;
+			public const int Index = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int notification_bg = 2130837526;
+			public const int mcgill = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int notification_bg_low = 2130837527;
+			public const int notification_action_background = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int notification_bg_low_normal = 2130837528;
+			public const int notification_bg = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int notification_bg_low_pressed = 2130837529;
+			public const int notification_bg_low = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int notification_bg_normal = 2130837530;
+			public const int notification_bg_low_normal = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int notification_bg_normal_pressed = 2130837531;
+			public const int notification_bg_low_pressed = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int notification_icon_background = 2130837532;
-			
-			// aapt resource value: 0x7f020022
-			public const int notification_template_icon_bg = 2130837538;
-			
-			// aapt resource value: 0x7f020023
-			public const int notification_template_icon_low_bg = 2130837539;
+			public const int notification_bg_normal = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int notification_tile_bg = 2130837533;
+			public const int notification_bg_normal_pressed = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int notify_panel_notification_icon_bg = 2130837534;
+			public const int notification_icon_background = 2130837534;
+			
+			// aapt resource value: 0x7f020024
+			public const int notification_template_icon_bg = 2130837540;
+			
+			// aapt resource value: 0x7f020025
+			public const int notification_template_icon_low_bg = 2130837541;
 			
 			// aapt resource value: 0x7f02001f
-			public const int Oratoire = 2130837535;
+			public const int notification_tile_bg = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int Poly = 2130837536;
+			public const int notify_panel_notification_icon_bg = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int Udem = 2130837537;
+			public const int Oratoire = 2130837537;
+			
+			// aapt resource value: 0x7f020022
+			public const int Poly = 2130837538;
+			
+			// aapt resource value: 0x7f020023
+			public const int Udem = 2130837539;
 			
 			static Drawable()
 			{
@@ -443,6 +449,9 @@ namespace Hackatown
 			
 			// aapt resource value: 0x7f0a0033
 			public const int ResultTextView = 2131361843;
+			
+			// aapt resource value: 0x7f0a0034
+			public const int ResultValueView = 2131361844;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int action0 = 2131361822;
