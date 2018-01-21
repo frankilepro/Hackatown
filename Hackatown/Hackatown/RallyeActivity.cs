@@ -20,6 +20,17 @@ namespace Hackatown
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Rallye);
+
+            var listView = FindViewById<ListView>(Resource.Id.listView1);
+            listView.Adapter = new lsViewAdapt(this, new List<string>
+            {
+                "0: 2049 Édouard-Montpetit, Montréal \nComplété en: 0min",
+                "1: Polytechnique Montréal \nComplété en: 12min",
+                "2: Université de Montréal \nComplété en: 22min",
+                "3: ?",
+                "4: ?",
+                "5: ?"
+            });
         }
     }
 }
