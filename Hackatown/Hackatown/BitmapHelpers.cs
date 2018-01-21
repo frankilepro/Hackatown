@@ -50,7 +50,12 @@ namespace Camera
             options.InSampleSize = inSampleSize;
             options.InJustDecodeBounds = false;
             Bitmap resizedBitmap = BitmapFactory.DecodeFile(fileName, options);
-            return resizedBitmap;
+
+            Matrix matrix = new Matrix();
+            matrix.PostRotate(90);
+            Bitmap rotatedBitmap = Bitmap.CreateBitmap(resizedBitmap, 0, 0, resizedBitmap.Width, resizedBitmap.Height, matrix, true);
+
+            return rotatedBitmap;
         }
     }
 }

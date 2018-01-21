@@ -99,7 +99,7 @@ namespace Hackatown
                 //Converstion Image Size  
                 int height = ImgView.Height;
                 int width = Resources.DisplayMetrics.WidthPixels;
-                using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
+                using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(height, width))
                 {
                     progress = new Android.App.ProgressDialog(this);
                     progress.Indeterminate = true;
@@ -107,6 +107,7 @@ namespace Hackatown
                     progress.SetMessage("Loading...");
                     progress.SetCancelable(false);
                     progress.Show();
+
                     var closest = await ClarifaiCaller.CallApi(bitmap);
                     Toast.MakeText(this, closest, ToastLength.Long).Show();
                     //View ImageView  
