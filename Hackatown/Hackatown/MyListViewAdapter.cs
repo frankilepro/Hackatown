@@ -33,7 +33,6 @@ namespace Hackatown
             row.FindViewById<TextView>(Resource.Id.listRowDate).Text = Items[position].Date.ToString("yyyy-MM-dd mm");
             row.FindViewById<TextView>(Resource.Id.listRowName).Text = Items[position].Name;
             row.FindViewById<TextView>(Resource.Id.listRowPourcentage).Text = Items[position].Pourcentage.ToString();
-            row.FindViewById<ImageView>(Resource.Id.listRowImage).SetBackgroundResource(Items[position].Img);
 
             return row;
         }

@@ -49,7 +49,14 @@ namespace Hackatown
                 BtnSelectImg.Click += BtnSelectImg_Click;
             }
 
-            FindViewById<ListView>(Resource.Id.listView).Adapter = new MyListViewAdapter(this, await DatabaseCaller.GetLatest());
+            var listView = FindViewById<ListView>(Resource.Id.listView);
+            listView.Adapter = new MyListViewAdapter(this, await DatabaseCaller.GetLatest());
+            listView.ItemClick += ListView_ItemClick;
+        }
+
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public override void OnBackPressed()
@@ -126,13 +133,13 @@ namespace Hackatown
                     {
                         res.PutExtra("name", closest.First().name);
                         res.PutExtra("value", $"{(int)Math.Round(closest.First().value * 100)}%");
-                        await DatabaseCaller.AddNewPerson(FakeDatabase.Buildings[closest.First().name], (int)Math.Round(closest.First().value * 100));
+                        await DatabaseCaller.AddBuilding(FakeDatabase.Buildings[closest.First().name], (int)Math.Round(closest.First().value * 100), _file.AbsolutePath);
                     }
                     else
                     {
                         res.PutExtra("name", "");
                         res.PutExtra("value", "");
-                        await DatabaseCaller.AddNewPerson(FakeDatabase.Buildings[""], 0);
+                        await DatabaseCaller.AddBuilding(FakeDatabase.Buildings[""], 0, _file.AbsolutePath);
                     }
 
                     StartActivity(res);
