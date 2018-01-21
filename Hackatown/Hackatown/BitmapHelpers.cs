@@ -10,7 +10,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-namespace Camera
+namespace Hackatown
 {
     public static class BitmapHelpers
     {
