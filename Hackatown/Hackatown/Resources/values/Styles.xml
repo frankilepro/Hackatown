@@ -8,6 +8,7 @@
     <item name="android:textColorPrimary">@color/my_white</item>
     <item name="android:statusBarColor">@color/my_dark_gray</item>
     <item name="android:navigationBarColor">@color/my_light_blue</item>
+    <item name="android:colorButtonNormal">@color/my_light_blue</item>
 
     <!--<item name="android:buttonStyle">@style/MyButtonStyle</item>-->
   </style>
