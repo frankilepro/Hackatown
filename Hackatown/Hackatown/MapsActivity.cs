@@ -25,7 +25,7 @@ namespace Hackatown
         ProgressDialog _pDialog;
         LocationManager _locationManager;
 
-        //Marker _currentPosMarker;
+        Marker _currentPosMarker;
         //Marker _firstMarker;
         //Marker _secondMarker;
         //Marker _thirdMarker;
@@ -58,6 +58,12 @@ namespace Hackatown
                 fragTx.Commit();
             }
             _mapFragment.GetMapAsync(this);
+        }
+        
+        public override void OnBackPressed()
+        {
+            Finish();
+            StartActivity(typeof(MainActivity));
         }
         public void OnMapReady(GoogleMap map)
         {
@@ -111,11 +117,14 @@ namespace Hackatown
             marker3.SetTitle(bldgs[2].Name);
             _map.AddMarker(marker3);
 
-            MarkerOptions curMarkerOps = new MarkerOptions();
-            curMarkerOps.SetPosition(here);
-            curMarkerOps.SetTitle("You are here");
-            curMarkerOps.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueAzure));
-            _map.AddMarker(curMarkerOps);
+            if(_currentPosMarker == null)
+            {
+                MarkerOptions curMarkerOps = new MarkerOptions();
+                curMarkerOps.SetPosition(here);
+                curMarkerOps.SetTitle("You are here");
+                curMarkerOps.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueAzure));
+                _currentPosMarker = _map.AddMarker(curMarkerOps);
+            }
 
             _pDialog.Hide();
         }

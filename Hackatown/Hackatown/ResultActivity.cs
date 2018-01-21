@@ -33,6 +33,11 @@ namespace Hackatown
             SetResultObject(Intent.GetStringExtra("name"), Intent.GetStringExtra("value"));
         }
 
+        public override void OnBackPressed()
+        {
+            Finish();
+            StartActivity(typeof(RecognitionActivity));
+        }
         public void SetResultObject(string name, string value)
         {
             textViewName.Text = name;

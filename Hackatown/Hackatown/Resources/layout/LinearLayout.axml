@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:padding="10dp">
+  <ImageView
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:id="@+id/listRowImage" />
+  <TextView
+      android:text="Date"
+      android:layout_width="wrap_content"
+      android:layout_height="20dp"
+      android:id="@+id/listRowDate"
+      android:textSize="20sp" />
+  <TextView
+      android:text="Nom"
+      android:layout_width="wrap_content"
+      android:layout_height="20dp"
+      android:id="@+id/listRowName"
+      android:textSize="20sp" />
+  <TextView
+      android:text="Pourcentage"
+      android:layout_width="wrap_content"
+      android:layout_height="20dp"
+      android:id="@+id/listRowPourcentage"
+      android:textSize="20sp" />
+</LinearLayout>

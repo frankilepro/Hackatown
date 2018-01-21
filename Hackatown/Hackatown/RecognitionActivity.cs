@@ -28,13 +28,13 @@ namespace Hackatown
     {
         Button BtnTakeImg;
         Button BtnSelectImg;
-        ImageView ImgView;
+        //ImageView ImgView;
 
         ProgressDialog progress;
 
         public static File _file;
         public static File _dir;
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource  
@@ -44,12 +44,19 @@ namespace Hackatown
                 CreateDirectoryForPictures();
                 BtnTakeImg = FindViewById<Button>(Resource.Id.btntakepicture);
                 BtnSelectImg = FindViewById<Button>(Resource.Id.btnselectpicture);
-                ImgView = FindViewById<ImageView>(Resource.Id.ImgTakeimg);
+                //ImgView = FindViewById<ImageView>(Resource.Id.ImgTakeimg);
                 BtnTakeImg.Click += TakeAPicture;
                 BtnSelectImg.Click += BtnSelectImg_Click;
             }
+
+            FindViewById<ListView>(Resource.Id.listView).Adapter = new MyListViewAdapter(this, await DatabaseCaller.GetLatest());
         }
 
+        public override void OnBackPressed()
+        {
+            Finish();
+            StartActivity(typeof(MainActivity));
+        }
         private void BtnSelectImg_Click(object sender, EventArgs e)
         {
             Intent = new Intent();
@@ -97,9 +104,9 @@ namespace Hackatown
                 mediaScanIntent.SetData(contentUri);
                 SendBroadcast(mediaScanIntent);
                 //Converstion Image Size  
-                int height = ImgView.Height;
+                //int height = ImgView.Height;
                 int width = Resources.DisplayMetrics.WidthPixels;
-                using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, height))
+                using (Bitmap bitmap = _file.Path.LoadAndResizeBitmap(width, 600))
                 {
                     progress = new ProgressDialog(this);
                     progress.Indeterminate = true;
@@ -110,13 +117,24 @@ namespace Hackatown
 
                     var closest = await ClarifaiCaller.CallApi(bitmap);
                     //View ImageView  
-                    ImgView.RecycleBitmap();
-                    ImgView.SetImageBitmap(bitmap);
+                    //ImgView.RecycleBitmap();
+                    //ImgView.SetImageBitmap(bitmap);
                     //Upload Image in Database
 
                     Intent res = new Intent(this, typeof(ResultActivity));
-                    res.PutExtra("name", closest.Count != 0 ? closest.First().name : "");
-                    res.PutExtra("value", closest.Count != 0 ? $"{(int)Math.Round(closest.First().value*100)}%" : "");
+                    if (closest.Count != 0)
+                    {
+                        res.PutExtra("name", closest.First().name);
+                        res.PutExtra("value", $"{(int)Math.Round(closest.First().value * 100)}%");
+                        await DatabaseCaller.AddNewPerson(FakeDatabase.Buildings[closest.First().name], (int)Math.Round(closest.First().value * 100));
+                    }
+                    else
+                    {
+                        res.PutExtra("name", "");
+                        res.PutExtra("value", "");
+                        await DatabaseCaller.AddNewPerson(FakeDatabase.Buildings[""], 0);
+                    }
+
                     StartActivity(res);
                 }
             }
