@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backend\ClarifaiCaller.cs" />
+    <Compile Include="Backend\DatabaseCaller.cs" />
     <Compile Include="Backend\FakeDatabase.cs" />
     <Compile Include="Backend\GoogleCaller.cs" />
     <Compile Include="Backend\Model\Building.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Backend\Model\ClarifaiRequest.cs" />
     <Compile Include="Backend\Model\ClarifaiResponse.cs" />
     <Compile Include="BitmapHelpers.cs" />
-    <Compile Include="Backend\DatabaseCaller.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MapsActivity.cs" />
     <Compile Include="MyListViewAdapter.cs" />
@@ -130,9 +130,7 @@
     <AndroidResource Include="Resources\layout\Result.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\LinearLayout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LinearLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -175,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Ets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\color.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\button_shape.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

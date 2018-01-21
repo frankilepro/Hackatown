@@ -9,15 +9,27 @@
         android:text="Recognition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recognition" />
+        android:id="@+id/recognition"
+        android:background="@drawable/button_shape"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
     <Button
         android:text="Maps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/maps" />
+        android:id="@+id/maps"
+        android:background="@drawable/button_shape"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
     <Button
         android:text="Rallye"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rallye" />
+        android:id="@+id/rallye"
+        android:background="@drawable/button_shape"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 </LinearLayout>
