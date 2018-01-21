@@ -42,5 +42,12 @@ namespace Hackatown
             var ls = await conn.Table<BuildingHistory>().OrderBy(x => x.Date).ToListAsync();
             return ls;
         }
+
+        public static async Task<BuildingHistory> GetFromId(int id)
+        {
+            var conn = new SQLiteAsyncConnection(Path);
+            var tmp = await conn.Table<BuildingHistory>().Where(x => x.Id == id).FirstOrDefaultAsync();
+            return tmp;
+        }
     }
 }
