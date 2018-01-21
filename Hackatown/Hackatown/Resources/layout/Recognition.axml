@@ -14,10 +14,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Select Picture from storage" />
-    <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_width="fill_parent"
-        android:layout_height="347.0dp"
-        android:id="@+id/ImgTakeimg"
-        android:adjustViewBounds="true" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView" />
 </LinearLayout>

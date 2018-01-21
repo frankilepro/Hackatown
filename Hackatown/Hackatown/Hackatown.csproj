@@ -18,7 +18,7 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -97,16 +97,21 @@
     <Compile Include="Backend\FakeDatabase.cs" />
     <Compile Include="Backend\GoogleCaller.cs" />
     <Compile Include="Backend\Model\Building.cs" />
+    <Compile Include="Backend\Model\BuildingHistory.cs" />
     <Compile Include="Backend\Model\ClarifaiRequest.cs" />
     <Compile Include="Backend\Model\ClarifaiResponse.cs" />
     <Compile Include="BitmapHelpers.cs" />
+    <Compile Include="Backend\DatabaseCaller.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MapsActivity.cs" />
+    <Compile Include="MyListViewAdapter.cs" />
     <Compile Include="RallyeActivity.cs" />
     <Compile Include="RecognitionActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultActivity.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -123,6 +128,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Result.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LinearLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -156,6 +164,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Concordia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tshirt_and_tote_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Styles.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Ets.png" />

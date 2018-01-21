@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/background_light"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@android:color/background_light">
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/background_light">
+        <ImageView
+            android:src="@drawable/index"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:id="@+id/ResultImgView" />
+        <TextView
+            android:text="LE NOM DE LUNI"
+            android:layout_weight="50"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/background_light">
-            <ImageView
-                android:src="@drawable/index"
-                android:layout_width="fill_parent"
-                android:layout_height="300dp"
-                android:id="@+id/ResultImgView" />
-            <TextView
-                android:text="asghjkklllllll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ResultTextView"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-            <TextView
-                android:text="aasfafsa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ResultValueView"
-                android:textColor="@android:color/black"
-                android:gravity="center" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+            android:id="@+id/textViewName"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_weight="100"
+            android:text="La description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/textViewDesc"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+</ScrollView>

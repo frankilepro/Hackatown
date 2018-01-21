@@ -18,16 +18,16 @@ namespace Hackatown
     public class ResultActivity : Activity
     {
         ImageView img;
-        TextView text;
-        TextView valueView;
+        TextView textViewName;
+        TextView textViewDesc;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Result);
             img = FindViewById<ImageView>(Resource.Id.ResultImgView);
-            text = FindViewById<TextView>(Resource.Id.ResultTextView);
-            valueView = FindViewById<TextView>(Resource.Id.ResultValueView);
+            textViewName = FindViewById<TextView>(Resource.Id.textViewName);
+            textViewDesc = FindViewById<TextView>(Resource.Id.textViewDesc);
 
 
             SetResultObject(Intent.GetStringExtra("name"), Intent.GetStringExtra("value"));
@@ -40,8 +40,8 @@ namespace Hackatown
         }
         public void SetResultObject(string name, string value)
         {
-            text.Text = name;
-            valueView.Text = $"Précision de {value}\n{FakeDatabase.Buildings[name].Description}";
+            textViewName.Text = name;
+            textViewDesc.Text = $"Précision de {value}\n{FakeDatabase.Buildings[name].Description}";
             img.SetImageResource(FakeDatabase.Buildings[name].Img);
         }
     }
