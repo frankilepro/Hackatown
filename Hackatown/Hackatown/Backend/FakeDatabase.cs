@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using System.Collections.Generic;
+using Hackatown.Backend.Model;
 
 namespace Hackatown.Backend
 {
-    class FakeDatabase
+    public static class FakeDatabase
     {
+        public static Dictionary<string, Building> Buildings { get; private set; }
+
+        static FakeDatabase()
+        {
+            //Buildings = new Dictionary<string, Building>
+            //{
+            //    {  }
+            //}
+        }
     }
 }

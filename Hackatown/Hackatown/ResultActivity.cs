@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Hackatown.Backend.Model;
 
 namespace Hackatown
 {
@@ -25,14 +26,17 @@ namespace Hackatown
             img = FindViewById<ImageView>(Resource.Id.ResultImgView);
             text = FindViewById<TextView>(Resource.Id.ResultTextView);
 
-            Building etablissement = new Building(Intent.GetStringExtra("name"));
+            Building etablissement = new Building
+            {
+                Name = Intent.GetStringExtra("name")
+            };
             SetResultObject(etablissement);
         }
 
         public void SetResultObject(Building e)
         {
-            text.Text = e._name;
-            img.SetImageResource(e._img);
+            text.Text = e.Name;
+            img.SetImageResource(e.Img);
         }
     }
 }
