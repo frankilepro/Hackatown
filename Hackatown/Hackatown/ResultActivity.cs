@@ -58,6 +58,8 @@ namespace Hackatown
                     _img = Resource.Drawable.Oratoire;
                     break;
                 default:
+                    _name = "Aucun bâtiment détecté.";
+                    _img = Resource.Drawable.index;
                     break;
             }
         }
