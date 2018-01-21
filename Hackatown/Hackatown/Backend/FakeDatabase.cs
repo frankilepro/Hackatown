@@ -63,6 +63,15 @@ namespace Hackatown.Backend
                         Long = -73.5812114
                     }
                 },
+                 {
+                    "ETS", new Building
+                    {
+                        Img = Resource.Drawable.Ets,
+                        Description = "L'École de technologie supérieure est une constituante du réseau de l'Université du Québec. Fondée en 1974, l'ÉTS est spécialisée dans l’enseignement et la recherche en génie et le transfert technologique.",
+                        Lat = 45.4946761,
+                        Long = -73.5622961
+                    }
+                },
             };
 
             foreach (var item in Buildings)
