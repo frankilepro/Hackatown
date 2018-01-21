@@ -48,7 +48,7 @@ namespace Hackatown
 			public const int Concordia = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int index = 2130837505;
+			public const int Index = 2130837505;
 			
 			// aapt resource value: 0x7f020002
 			public const int mcgill = 2130837506;
