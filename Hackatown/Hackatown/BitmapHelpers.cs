@@ -27,6 +27,17 @@ namespace Camera
                 ((BitmapDrawable)toRecycle).Bitmap.Recycle();
             }
         }
+
+        public static Bitmap Load(this string fileName)
+        {
+            BitmapFactory.Options options = new BitmapFactory.Options
+            {
+                InPurgeable = true,
+                InJustDecodeBounds = true
+            };
+            return BitmapFactory.DecodeFile(fileName, options);
+        }
+
         /// Load the image from the device, and resize it to the specified dimensions.  
         public static Bitmap LoadAndResizeBitmap(this string fileName, int width, int height)
         {
