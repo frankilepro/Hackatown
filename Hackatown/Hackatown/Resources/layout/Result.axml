@@ -12,7 +12,7 @@
             android:orientation="vertical"
             android:background="@android:color/background_light">
             <ImageView
-                android:src="@drawable/poly"
+                android:src="@drawable/index"
                 android:layout_width="fill_parent"
                 android:layout_height="300dp"
                 android:id="@+id/ResultImgView" />
@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/ResultTextView"
                 android:textColor="@android:color/black"
-                android:gravity="center"/>
+                android:gravity="center" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

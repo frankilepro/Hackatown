@@ -116,7 +116,7 @@ namespace Hackatown
                     //Upload Image in Database
 
                     Intent res = new Intent(this, typeof(ResultActivity));
-                    res.PutExtra("name", closest.First().Split(':')[0]);
+                    res.PutExtra("name", closest.Count != 0 ? closest.First().Split(':')[0] : "");
                     StartActivity(res);
                 }
             }
