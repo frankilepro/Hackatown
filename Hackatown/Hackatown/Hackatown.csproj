@@ -94,19 +94,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backend\ClarifaiCaller.cs" />
+    <Compile Include="Backend\DatabaseCaller.cs" />
     <Compile Include="Backend\FakeDatabase.cs" />
     <Compile Include="Backend\GoogleCaller.cs" />
     <Compile Include="Backend\Model\Building.cs" />
+    <Compile Include="Backend\Model\BuildingHistory.cs" />
     <Compile Include="Backend\Model\ClarifaiRequest.cs" />
     <Compile Include="Backend\Model\ClarifaiResponse.cs" />
     <Compile Include="BitmapHelpers.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MapsActivity.cs" />
+    <Compile Include="MyListViewAdapter.cs" />
     <Compile Include="RallyeActivity.cs" />
     <Compile Include="RecognitionActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultActivity.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -125,6 +130,7 @@
     <AndroidResource Include="Resources\layout\Result.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\LinearLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

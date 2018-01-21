@@ -174,8 +174,8 @@ namespace Hackatown
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f06000f
-			public const int common_google_signin_btn_text_dark = 2131099663;
+			// aapt resource value: 0x7f060013
+			public const int common_google_signin_btn_text_dark = 2131099667;
 			
 			// aapt resource value: 0x7f060000
 			public const int common_google_signin_btn_text_dark_default = 2131099648;
@@ -189,8 +189,8 @@ namespace Hackatown
 			// aapt resource value: 0x7f060003
 			public const int common_google_signin_btn_text_dark_pressed = 2131099651;
 			
-			// aapt resource value: 0x7f060010
-			public const int common_google_signin_btn_text_light = 2131099664;
+			// aapt resource value: 0x7f060014
+			public const int common_google_signin_btn_text_light = 2131099668;
 			
 			// aapt resource value: 0x7f060004
 			public const int common_google_signin_btn_text_light_default = 2131099652;
@@ -204,8 +204,20 @@ namespace Hackatown
 			// aapt resource value: 0x7f060007
 			public const int common_google_signin_btn_text_light_pressed = 2131099655;
 			
+			// aapt resource value: 0x7f060015
+			public const int common_google_signin_btn_tint = 2131099669;
+			
+			// aapt resource value: 0x7f060010
+			public const int my_dark_gray = 2131099664;
+			
+			// aapt resource value: 0x7f06000f
+			public const int my_light_blue = 2131099663;
+			
 			// aapt resource value: 0x7f060011
-			public const int common_google_signin_btn_tint = 2131099665;
+			public const int my_purple = 2131099665;
+			
+			// aapt resource value: 0x7f060012
+			public const int my_white = 2131099666;
 			
 			// aapt resource value: 0x7f06000b
 			public const int notification_action_color_filter = 2131099659;
