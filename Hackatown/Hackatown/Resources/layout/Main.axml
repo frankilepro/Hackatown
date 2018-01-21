@@ -10,26 +10,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recognition"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:drawableLeft="@drawable/camera"
         android:background="@drawable/button_shape"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
-    <Button
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"/>
+    <Button 
         android:text="Maps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/maps"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:drawableLeft="@drawable/pointer"
         android:background="@drawable/button_shape"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"/>
     <Button
         android:text="Rallye"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rallye"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:drawableLeft="@drawable/location"
         android:background="@drawable/button_shape"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"/>
 </LinearLayout>
