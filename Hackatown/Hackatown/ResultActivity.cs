@@ -35,31 +35,4 @@ namespace Hackatown
             img.SetImageResource(e._img);
         }
     }
-
-    public class Building
-    {
-        public int _img;
-        public string _name;
-
-        public Building(string name)
-        {
-            switch(name)
-            {
-                case "Polytechnique":
-                    _img = Resource.Drawable.Poly;
-                    _name = "Polytechnique Montreal";
-                    break;
-                case "Universite de Montreal":
-                    _img = Resource.Drawable.Udem;
-                    _name = "Universite de Montreal";
-                    break;
-                case "Oratoire St-Joseph":
-                    _name = "Oratoire St-Joseph";
-                    _img = Resource.Drawable.Oratoire;
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
 }
