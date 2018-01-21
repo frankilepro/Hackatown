@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Hackatown
 {
-    [Activity(Label = "RallyeActivity")]
+    [Activity(Label = "Rallye")]
     public class RallyeActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

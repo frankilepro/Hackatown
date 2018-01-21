@@ -17,7 +17,7 @@ using Hackatown.Backend.Model;
 
 namespace Hackatown
 {
-    [Activity(Label = "MapsActivity")]
+    [Activity(Label = "Cartes")]
     public class MapsActivity : Activity, ILocationListener, IOnMapReadyCallback
     {
         MapFragment _mapFragment;
@@ -39,7 +39,7 @@ namespace Hackatown
             _pDialog.Indeterminate = true;
             _pDialog.SetProgressStyle(ProgressDialogStyle.Spinner);
             _pDialog.SetMessage("Loading...");
-            _pDialog.SetCancelable(false);
+            _pDialog.SetCancelable(true);
             _pDialog.Show();
             
             _locationManager = GetSystemService(Context.LocationService) as LocationManager;
@@ -90,7 +90,7 @@ namespace Hackatown
 
             CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
             builder.Target(here);
-            builder.Zoom(13);
+            builder.Zoom(16);
             CameraPosition cameraPosition = builder.Build();
             CameraUpdate cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
 

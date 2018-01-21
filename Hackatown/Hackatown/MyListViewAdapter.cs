@@ -31,9 +31,9 @@ namespace Hackatown
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View row = convertView == null ? LayoutInflater.From(Ctx).Inflate(Resource.Layout.LinearLayout, null, false) : convertView;
-            row.FindViewById<TextView>(Resource.Id.listRowDate).Text = Items[position].Date.ToString("yyyy-MM-dd mm");
-            row.FindViewById<TextView>(Resource.Id.listRowName).Text = Items[position].Name;
-            row.FindViewById<TextView>(Resource.Id.listRowPourcentage).Text = Items[position].Pourcentage.ToString();
+            var tmp = row.FindViewById<TextView>(Resource.Id.listRowText);
+            tmp.Text = Items[position].Date.ToString("yyyy-MM-dd hh:mm") + "\n" +
+                       Items[position].Name + " @ " + $"{Items[position].Pourcentage.ToString()}%";
 
             return row;
         }

@@ -22,7 +22,7 @@ using Hackatown.Backend;
 
 namespace Hackatown
 {
-    [Activity(Label = "RecognitionActivity")]
+    [Activity(Label = "Reconnaissance")]
     public class RecognitionActivity : Activity
     {
         Button BtnTakeImg;
@@ -40,6 +40,7 @@ namespace Hackatown
             SetContentView(Resource.Layout.Recognition);
             if (IsThereAnAppToTakePictures())
             {
+                _file = null;
                 CreateDirectoryForPictures();
                 BtnTakeImg = FindViewById<Button>(Resource.Id.btntakepicture);
                 BtnSelectImg = FindViewById<Button>(Resource.Id.btnselectpicture);
@@ -53,9 +54,17 @@ namespace Hackatown
             listView.ItemClick += ListView_ItemClick;
         }
 
-        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private async void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            throw new NotImplementedException();
+            var ls = sender as ListView;
+            var myAdaps = ls.Adapter as MyListViewAdapter;
+            var buid = myAdaps[e.Position];
+
+            Intent intent = new Intent();
+            intent.SetAction(Intent.ActionView);
+            var rep = await DatabaseCaller.GetFromId(buid.Id);
+            intent.SetDataAndType(Uri.Parse("file://" + rep.ImgPath), "image/*");
+            StartActivity(intent);
         }
 
         public override void OnBackPressed()
@@ -136,9 +145,9 @@ namespace Hackatown
                     }
                     else
                     {
-                        res.PutExtra("name", "");
+                        res.PutExtra("name", "Aucun monument reconnu");
                         res.PutExtra("value", "");
-                        await DatabaseCaller.AddBuilding(FakeDatabase.Buildings[""], 0, _file.AbsolutePath);
+                        await DatabaseCaller.AddBuilding(FakeDatabase.Buildings["Aucun monument reconnu"], 0, _file.AbsolutePath);
                     }
 
                     StartActivity(res);

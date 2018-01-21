@@ -12,7 +12,7 @@ namespace Hackatown.Backend
             Buildings = new Dictionary<string, Building>
             {
                 {
-                    "", new Building
+                    "Aucun monument reconnu", new Building
                     {
                         Img = Resource.Drawable.Index,
                         Description = "Malheureusement ca fonctionne pas!"

@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace Hackatown
 {
-    [Activity(Label = "Hackatown", MainLauncher = true)]
+    [Activity(Label = "Vision Tourisme", MainLauncher = true)]
     public class MainActivity : Activity
     {
         Button recognition;

@@ -14,7 +14,7 @@ using Hackatown.Backend.Model;
 
 namespace Hackatown
 {
-    [Activity(Label = "ResultActivity")]
+    [Activity(Label = "Résultat")]
     public class ResultActivity : Activity
     {
         ImageView img;
@@ -42,7 +42,7 @@ namespace Hackatown
         public void SetResultObject(string name, string value)
         {
             textViewName.Text = name;
-            textViewDesc.Text = $"Précision de {value}\n{FakeDatabase.Buildings[name].Description}";
+            textViewDesc.Text = value == "" ? FakeDatabase.Buildings[name].Description : $"Précision de {value}\n{FakeDatabase.Buildings[name].Description}";
             img.SetImageResource(FakeDatabase.Buildings[name].Img);
         }
     }

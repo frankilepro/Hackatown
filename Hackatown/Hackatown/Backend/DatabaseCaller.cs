@@ -39,7 +39,7 @@ namespace Hackatown
         public static async Task<List<BuildingHistory>> GetLatest()
         {
             var conn = new SQLiteAsyncConnection(Path);
-            var ls = await conn.Table<BuildingHistory>().OrderBy(x => x.Date).ToListAsync();
+            var ls = await conn.Table<BuildingHistory>().OrderByDescending(x => x.Date).ToListAsync();
             return ls;
         }
 
