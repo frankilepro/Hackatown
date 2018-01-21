@@ -13,6 +13,7 @@ using Android.Locations;
 using System.Threading;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
+using Hackatown.Backend.Model;
 
 namespace Hackatown
 {
@@ -95,8 +96,26 @@ namespace Hackatown
             curMarkerOps.SetTitle("You are here");
             _map.AddMarker(curMarkerOps);
 
+            List<Building> bldgs = Backend.GoogleCaller.BuildingProches(here.Longitude, here.Latitude);
 
 
+            MarkerOptions marker1 = new MarkerOptions();
+            LatLng marker1Coords = new LatLng(bldgs[0].Lat, bldgs[0].Long);
+            marker1.SetPosition(marker1Coords);
+            //marker1.SetTitle(bldgs[0].Name);
+            _map.AddMarker(marker1);
+            
+            MarkerOptions marker2 = new MarkerOptions();
+            LatLng marker2Coords = new LatLng(bldgs[1].Lat, bldgs[1].Long);
+            marker2.SetPosition(marker2Coords);
+            //marker2.SetTitle(bldgs[1].Name);
+            _map.AddMarker(marker2);
+
+            MarkerOptions marker3 = new MarkerOptions();
+            LatLng marker3Coords = new LatLng(bldgs[2].Lat, bldgs[2].Long);
+            marker3.SetPosition(marker3Coords);
+            //marker3.SetTitle(bldgs[2].Name);
+            _map.AddMarker(marker3);
 
             _pDialog.Hide();
         }

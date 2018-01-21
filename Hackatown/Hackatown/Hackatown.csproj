@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Backend\ClarifaiCaller.cs" />
     <Compile Include="Backend\FakeDatabase.cs" />
+    <Compile Include="Backend\GoogleCaller.cs" />
     <Compile Include="Backend\Model\Building.cs" />
     <Compile Include="Backend\Model\ClarifaiRequest.cs" />
     <Compile Include="Backend\Model\ClarifaiResponse.cs" />
@@ -152,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Index.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Concordia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
