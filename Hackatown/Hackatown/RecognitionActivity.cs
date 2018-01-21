@@ -109,14 +109,14 @@ namespace Hackatown
                     progress.Show();
 
                     var closest = await ClarifaiCaller.CallApi(bitmap);
-                    Toast.MakeText(this, string.Join("\n", closest), ToastLength.Long).Show();
                     //View ImageView  
                     ImgView.RecycleBitmap();
                     ImgView.SetImageBitmap(bitmap);
                     //Upload Image in Database
 
                     Intent res = new Intent(this, typeof(ResultActivity));
-                    res.PutExtra("name", closest.Count != 0 ? closest.First().Split(':')[0] : "");
+                    res.PutExtra("name", closest.Count != 0 ? closest.First().name : "");
+                    res.PutExtra("value", closest.Count != 0 ? $"{(int)Math.Round(closest.First().value*100)}%" : "");
                     StartActivity(res);
                 }
             }
