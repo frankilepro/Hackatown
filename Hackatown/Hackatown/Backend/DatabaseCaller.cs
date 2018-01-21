@@ -24,22 +24,30 @@ namespace Hackatown
             conn.CreateTableAsync<BuildingHistory>();
         }
 
-        public static async Task AddNewPerson(Building building, int pourcentage)
+        public static async Task AddBuilding(Building building, int pourcentage, string imgPath)
         {
             var conn = new SQLiteAsyncConnection(Path);
             var result = await conn.InsertAsync(new BuildingHistory
             {
                 Date = DateTime.Now,
-                Img = building.Img,
                 Name = building.Name,
-                Pourcentage = pourcentage
+                Pourcentage = pourcentage,
+                ImgPath = imgPath
             });
         }
 
         public static async Task<List<BuildingHistory>> GetLatest()
         {
             var conn = new SQLiteAsyncConnection(Path);
-            return await conn.Table<BuildingHistory>().OrderBy(x => x.Date).ToListAsync();
+            var ls = await conn.Table<BuildingHistory>().OrderBy(x => x.Date).ToListAsync();
+            return ls;
+        }
+
+        public static async Task<BuildingHistory> GetFromId(int id)
+        {
+            var conn = new SQLiteAsyncConnection(Path);
+            var tmp = await conn.Table<BuildingHistory>().Where(x => x.Id == id).FirstOrDefaultAsync();
+            return tmp;
         }
     }
 }

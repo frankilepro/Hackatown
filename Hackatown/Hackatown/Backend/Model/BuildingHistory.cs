@@ -19,7 +19,7 @@ namespace Hackatown.Backend.Model
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public string Name { get; set; }
-        public int Img { get; set; }
+        public string ImgPath { get; set; }
         public int Pourcentage { get; set; }
     }
 }

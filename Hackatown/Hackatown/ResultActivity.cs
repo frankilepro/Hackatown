@@ -38,6 +38,7 @@ namespace Hackatown
             Finish();
             StartActivity(typeof(RecognitionActivity));
         }
+
         public void SetResultObject(string name, string value)
         {
             textViewName.Text = name;
