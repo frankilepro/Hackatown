@@ -50,6 +50,11 @@ namespace Hackatown
             }
         }
 
+        public override void OnBackPressed()
+        {
+            Finish();
+            StartActivity(typeof(MainActivity));
+        }
         private void BtnSelectImg_Click(object sender, EventArgs e)
         {
             Intent = new Intent();
