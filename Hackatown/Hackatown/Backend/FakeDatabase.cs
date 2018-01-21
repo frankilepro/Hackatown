@@ -64,6 +64,11 @@ namespace Hackatown.Backend
                     }
                 },
             };
+
+            foreach (var item in Buildings)
+            {
+                item.Value.Name = item.Key;
+            }
         }
     }
 }
