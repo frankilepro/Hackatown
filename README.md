@@ -1,4 +1,4 @@
-# Visiou Tourisme
+# Vision Tourisme
 
 App that recognizes famous buildings in Montréal
 
